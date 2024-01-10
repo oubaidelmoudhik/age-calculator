@@ -7,16 +7,31 @@
 }
 .mainForm {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 15px;
 }
 .mainForm button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 80px;
-  border-radius: 50%;
+  position: relative;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  grid-column: 4 / 5;
+  grid-row: 2 / 3;
+}
+
+.mainForm button:hover {
+  border: none;
+}
+.mainForm img {
   background-color: var(--clr-primary-purple);
+  border-radius: 50%;
+  padding: 15px;
+  transition: 0.2s linear;
+}
+.mainForm img:hover {
+  background-color: var(--clr-off-black);
+  border-radius: 50%;
+  padding: 15px;
 }
 .inputContainer {
   display: flex;
