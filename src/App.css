@@ -57,6 +57,13 @@
 .inputContainer input:focus {
   border-color: var(--clr-primary-purple);
 }
+/* .inputContainer input:valid {
+  background-color: palegreen;
+}
+
+.inputContainer input:invalid {
+  background-color: lightpink;
+} */
 .results {
   font-weight: 900;
   font-style: italic;
