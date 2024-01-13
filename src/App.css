@@ -57,10 +57,12 @@
 .inputContainer input:focus {
   border-color: var(--clr-primary-purple);
 }
+input:invalid {
+  border-color: red;
+}
 /* .inputContainer input:valid {
   background-color: palegreen;
 }
-
 .inputContainer input:invalid {
   background-color: lightpink;
 } */
