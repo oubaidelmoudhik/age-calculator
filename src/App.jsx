@@ -19,19 +19,26 @@ function App() {
     value: '',
   });
   const [age, setAge] = useState({});
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   function handleSubmit(e) {
     e.preventDefault();
 
     const birthdate = `${year.value}-${month.value}-${day.value}`;
+    const date = new Date(birthdate);
+    const currentDate = new Date();
     setAge(calculateAge(birthdate));
-    console.log(age);
+    setFormSubmitted(true);
   }
   return (
     <>
       <div className='container'>
         <form action='/' className='mainForm' onSubmit={handleSubmit}>
-          <div className='inputContainer'>
+          <div
+            className={`inputContainer ${
+              day.empty && formSubmitted ? 'empty' : undefined
+            }`}
+          >
             <label htmlFor='day'>Day</label>
             <input
               id='day'
@@ -49,7 +56,11 @@ function App() {
               }
             />
           </div>
-          <div className='inputContainer'>
+          <div
+            className={`inputContainer ${
+              month.empty && formSubmitted ? 'empty' : undefined
+            }`}
+          >
             <label htmlFor='month'>Month</label>
             <input
               id='month'
@@ -67,7 +78,11 @@ function App() {
               }
             />
           </div>
-          <div className='inputContainer'>
+          <div
+            className={`inputContainer ${
+              year.empty && formSubmitted ? 'empty' : undefined
+            }`}
+          >
             <label htmlFor='year'>Year</label>
             <input
               id='year'
@@ -92,10 +107,10 @@ function App() {
         </form>
         <div className='results'>
           <div className='years'>
-            <span>{age.years ? age.years : '- -'}</span> years
+            <span>{age.years >= 0 ? age.years : '- -'}</span> years
           </div>
           <div className='months'>
-            <span>{age.months ? age.months : '- -'}</span>{' '}
+            <span>{age.months >= 0 ? age.months : '- -'}</span>{' '}
             {age.months == 1 ? 'month' : 'months'}
           </div>
           <div className='days'>

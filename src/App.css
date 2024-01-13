@@ -8,7 +8,7 @@
 .mainForm {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 15px;
+  gap: 25px;
 }
 .mainForm button {
   position: relative;
@@ -47,7 +47,7 @@
 }
 .inputContainer input {
   border: 1px solid var(--clr-off-white);
-  border-radius: 3px;
+  border-radius: 5px;
   font-weight: 700;
   font-size: 32px;
   outline: none;
@@ -57,15 +57,29 @@
 .inputContainer input:focus {
   border-color: var(--clr-primary-purple);
 }
-input:invalid {
+/* input:invalid {
   border-color: red;
-}
+} */
 /* .inputContainer input:valid {
   background-color: palegreen;
 }
 .inputContainer input:invalid {
   background-color: lightpink;
 } */
+.empty label {
+  color: var(--clr-light-red);
+}
+.empty input {
+  border-color: var(--clr-light-red);
+}
+/* prettier-ignore */
+.empty::after {
+  content: "This field is required";
+  color: var(--clr-light-red);
+  font-size: 14px;
+  font-style: italic;
+}
+
 .results {
   font-weight: 900;
   font-style: italic;
