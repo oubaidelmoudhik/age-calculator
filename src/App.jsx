@@ -4,6 +4,7 @@ import Results from './components/resutls';
 import arrow from '../assets/images/icon-arrow.svg';
 import { useState } from 'react';
 import { calculateAge } from './helpers/calculateAge';
+import { validateDate } from './helpers/validateDate';
 
 function App() {
   const [day, setDay] = useState({
@@ -25,8 +26,7 @@ function App() {
     e.preventDefault();
 
     const birthdate = `${year.value}-${month.value}-${day.value}`;
-    const date = new Date(birthdate);
-    const currentDate = new Date();
+    const dateValidation = validateDate(day.value, month.value, year.value);
     setAge(calculateAge(birthdate));
     setFormSubmitted(true);
   }

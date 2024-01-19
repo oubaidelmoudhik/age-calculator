@@ -18,6 +18,25 @@
   grid-column: 4 / 5;
   grid-row: 2 / 3;
 }
+@media (width <= 600px) {
+  #root {
+    max-width: 80%;
+  }
+  .container {
+    width: 100%;
+    padding: 3rem 1.8rem;
+  }
+  .mainForm {
+    display: flex;
+    flex-wrap: wrap;
+    /* grid-template-columns: repeat(3, 1fr); */
+    gap: 15px;
+  }
+  .mainForm button {
+    grid-column: 2 / 2;
+    grid-row: 2 / 3;
+  }
+}
 
 .mainForm button:hover {
   border: none;
