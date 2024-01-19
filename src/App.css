@@ -1,4 +1,4 @@
-.container {
+/* .container {
   background-color: var(--clr-white);
   display: flex;
   flex-direction: column;
@@ -29,7 +29,7 @@
   .mainForm {
     display: flex;
     flex-wrap: wrap;
-    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-columns: repeat(3, 1fr);
     gap: 15px;
   }
   .mainForm button {
@@ -75,6 +75,97 @@
 }
 .inputContainer input:focus {
   border-color: var(--clr-primary-purple);
+}
+ input:invalid {
+  border-color: red;
+}
+.inputContainer input:valid {
+  background-color: palegreen;
+}
+.inputContainer input:invalid {
+  background-color: lightpink;
+}
+.empty label {
+  color: var(--clr-light-red);
+}
+.empty input {
+  border-color: var(--clr-light-red);
+}
+/* prettier-ignore */
+/*
+.empty::after {
+  content: "This field is required";
+  color: var(--clr-light-red);
+  font-size: 14px;
+  font-style: italic;
+}
+
+.results {
+  font-weight: 900;
+  font-style: italic;
+  font-size: 70px;
+  color: var(--clr-off-black);
+}
+.results span {
+  color: var(--clr-primary-purple);
+}
+*/
+
+#root {
+  display: flex;
+  max-width: 85%;
+}
+.container {
+  background-color: var(--clr-white);
+  border-radius: 20px 20px 100px 20px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 4rem 2rem;
+}
+.mainForm {
+  display: flex;
+  /* grid-template-columns: repeat(3, 1fr); */
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 30%;
+}
+.inputContainer label {
+  color: var(--clr-smokey-grey);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.inputContainer input {
+  border: 1px solid var(--clr-off-white);
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  outline: none;
+  padding: 10px 17px 10px 10px;
+  text-transform: uppercase;
+}
+.inputContainer input:focus {
+  border-color: var(--clr-primary-purple);
+}
+input[type='image'] {
+  background-color: var(--clr-primary-purple);
+  border-radius: 50%;
+  padding: 15px;
+  transition: 0.2s linear;
+  justify-self: center;
+}
+input[type='image']:hover {
+  background-color: var(--clr-off-black);
+  border-radius: 50%;
+  padding: 15px;
 }
 /* input:invalid {
   border-color: red;

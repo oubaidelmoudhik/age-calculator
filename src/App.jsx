@@ -43,6 +43,7 @@ function App() {
             <input
               id='day'
               type='number'
+              autoComplete='hidden'
               min={1}
               max={31}
               placeholder='DD'
@@ -65,6 +66,7 @@ function App() {
             <input
               id='month'
               type='number'
+              autoComplete='hidden'
               min={1}
               max={12}
               placeholder='MM'
@@ -87,6 +89,7 @@ function App() {
             <input
               id='year'
               type='number'
+              autoComplete='hidden'
               min={1950}
               max={2024}
               placeholder='YYYY'
@@ -101,9 +104,7 @@ function App() {
             />
           </div>
 
-          <button>
-            <img src={arrow} />
-          </button>
+          <input type='image' src={arrow} alt='submit' />
         </form>
         <div className='results'>
           <div className='years'>
